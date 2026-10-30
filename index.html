@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEON//FORGE — 霓虹视觉调校台</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div class="glow-layer" aria-hidden="true"></div>
+
+  <header class="nav">
+    <span class="logo">NEON<span>//</span>FORGE</span>
+    <nav class="links">
+      <a href="#stage">控制台</a>
+      <a href="#spec">参数</a>
+      <a href="#stage" class="cta">立即调校</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">SYSTEM ONLINE · 2026</p>
+      <h1>把页面调成<br><em>霓虹脉冲</em></h1>
+      <p class="lead">实时预览 · 精准落点 · 零框架依赖。拖动滑块，光场与配色即刻响应。</p>
+      <div class="hero-actions">
+        <a href="#stage" class="btn btn-primary">进入控制台</a>
+        <a href="#spec" class="btn btn-ghost">查看参数</a>
+      </div>
+    </section>
+
+    <section id="stage" class="stage">
+      <div class="stage-head">
+        <h2>实时光场</h2>
+        <output id="readout">hue 312° · bloom 0.62</output>
+      </div>
+      <div class="stage-body">
+        <div class="preview" id="preview">
+          <div class="preview-card">
+            <span class="tag">LIVE PREVIEW</span>
+            <h3 id="previewTitle">霓虹脉冲</h3>
+            <p id="previewText">光带沿网格流动，边缘泛出冷调辉光。</p>
+          </div>
+        </div>
+        <div class="controls">
+          <label>
+            <span>色相 <b id="hueVal">312°</b></span>
+            <input id="hue" type="range" min="0" max="360" value="312">
+          </label>
+          <label>
+            <span>辉光 <b id="bloomVal">0.62</b></span>
+            <input id="bloom" type="range" min="0" max="1" step="0.01" value="0.62">
+          </label>
+          <label>
+            <span>流速 <b id="speedVal">1.00×</b></span>
+            <input id="speed" type="range" min="0.2" max="2.5" step="0.05" value="1">
+          </label>
+          <label class="switch">
+            <span>网格</span>
+            <input id="grid" type="checkbox" checked>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section id="spec" class="spec">
+      <h2>调校参数</h2>
+      <ul>
+        <li><b>色相</b><span>整体色带基色，0–360 连续可调</span></li>
+        <li><b>辉光</b><span>叠加模糊半径与透明度，控制霓虹强度</span></li>
+        <li><b>流速</b><span>粒子推进速度，1.00× 为基准节奏</span></li>
+        <li><b>网格</b><span>背景透视网格开关，移动端自动降级</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>NEON//FORGE</span>
+    <span>Vanilla HTML5 Canvas · 无第三方依赖</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
